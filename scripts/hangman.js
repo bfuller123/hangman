@@ -18,7 +18,10 @@ function stringToArray(str) {
 function arrayToBlanks(arr) {
   Hangman.board = [];
   arr.forEach(function(element){
-    if(element == ' ' || element == ',' || element == "'") {
+    if(element == ' ') {
+      Hangman.board.push('\u00A0');
+    }
+    else if(element == ',' || element == "'") {
       Hangman.board.push(element);
     }
     else {
@@ -66,7 +69,7 @@ document.onkeyup = function(event) {
 
 
 
-
+/*
 var wordlist = ['Apple',
 'Adzuki',
 'Bakeable custard',
@@ -135,3 +138,4 @@ var wordlist = ['Apple',
 'Yokohama cheesecake',
 'Yubari melon',
 'Yuzu']
+*/
