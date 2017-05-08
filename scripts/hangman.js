@@ -21,6 +21,7 @@ document.onkeyup = function(event) {
     Hangman.answer = stringToArray(randomWord.toLowerCase());
     arrayToBlanks(Hangman.answer);
     guesses_left.textContent = Hangman.guessesLeft;
+    letters_guessed.textContent = Hangman.wrongLettersGuessed;
     answer.textContent = Hangman.board.join(' ');
   }
   else if (guessableLetters.includes(event.key)) {
