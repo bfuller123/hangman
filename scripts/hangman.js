@@ -16,29 +16,26 @@ document.onkeyup = function(event) {
   if (event.key === 'Enter') {
     Hangman.guessesLeft = 6;
     Hangman.lettersGuessed = [];
-    console.log('getting random word');
+    Hangman.wrongLettersGuessed = [];
     var randomWord = getRandomWord(wordlist);
     Hangman.fullAnswer = randomWord;
-    console.log(randomWord);
-    console.log('changing to an array');
     Hangman.answer = stringToArray(randomWord.toLowerCase());
-    console.log('writing it to the board');
     arrayToBlanks(Hangman.answer);
     guesses_left.textContent = Hangman.guessesLeft;
     answer.textContent = Hangman.board.join(' ');
   }
   else {
     Hangman.userGuess = event.key;
-    console.log(Hangman.userGuess);
     if (Hangman.lettersGuessed.includes(Hangman.userGuess)) {
       alerts.textContent = 'You have already guessed ' + Hangman.userGuess;
     }
     else if (Hangman.answer.includes(Hangman.userGuess)){
+      updateLettersGuessed();
       findLettersSpot(Hangman.answer);
       alerts.textContent = '';
     }
     else {
-      updateLettersGuessed();
+      updateWrongLettersGuessed();
     }
     answer.textContent = Hangman.board.join(' ');
   }

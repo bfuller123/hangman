@@ -45,9 +45,14 @@ function lowerUserGuessCount(){
   }
 }
 
-function updateLettersGuessed(){
-  alerts.textContent = '';
+function updateLettersGuessed() {
   Hangman.lettersGuessed.push(Hangman.userGuess);
-  letters_guessed.textContent = Hangman.lettersGuessed.join(' ');
+}
+
+function updateWrongLettersGuessed(){
+  alerts.textContent = '';
+  updateLettersGuessed();
+  Hangman.wrongLettersGuessed.push(Hangman.userGuess);
+  letters_guessed.textContent = Hangman.wrongLettersGuessed.join(' ');
   lowerUserGuessCount();
 }
