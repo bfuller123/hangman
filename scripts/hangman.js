@@ -1,5 +1,10 @@
+//need to have letters guessed and wrong letters guessed
+//create start button
+//create restart button
+
 var Hangman = {
   userGuess: undefined,
+  fullAnswer: undefined,
   answer: [],
   lettersGuessed: [],
   guessesLeft: 6,
@@ -21,7 +26,7 @@ function arrayToBlanks(arr) {
     if(element == ' ') {
       Hangman.board.push('\u00A0');
     }
-    else if(element == ',' || element == "'") {
+    else if(element == ',' || element == "'" || element == '-') {
       Hangman.board.push(element);
     }
     else {
@@ -43,99 +48,51 @@ function fillLettersSpot(targetArr, index, element){
   targetArr[index] = element;
 }
 
+function lowerUserGuessCount(){
+  if (Hangman.guessesLeft > 0) {
+    Hangman.guessesLeft -= 1;
+    guesses_left.textContent = Hangman.guessesLeft;
+    if (Hangman.guessesLeft == 0){
+      alerts.textContent = 'Game Over! The correct answer was ' + Hangman.fullAnswer;
+    }
+  }
+}
+
+function updateLettersGuessed(){
+  alerts.textContent = '';
+  Hangman.lettersGuessed.push(Hangman.userGuess);
+  letters_guessed.textContent = Hangman.lettersGuessed.join(' ');
+  lowerUserGuessCount();
+}
+
 document.onkeyup = function(event) {
   if (event.key === 'Enter') {
+    Hangman.guessesLeft = 6;
+    Hangman.lettersGuessed = [];
     console.log('getting random word');
     var randomWord = getRandomWord(wordlist);
+    Hangman.fullAnswer = randomWord;
     console.log(randomWord);
     console.log('changing to an array');
     Hangman.answer = stringToArray(randomWord.toLowerCase());
     console.log('writing it to the board');
     arrayToBlanks(Hangman.answer);
+    guesses_left.textContent = Hangman.guessesLeft;
     answer.textContent = Hangman.board.join(' ');
   }
   else {
     Hangman.userGuess = event.key;
     console.log(Hangman.userGuess);
-    findLettersSpot(Hangman.answer);
-    answer.textContent = '';
+    if (Hangman.lettersGuessed.includes(Hangman.userGuess)) {
+      alerts.textContent = 'You have already guessed ' + Hangman.userGuess;
+    }
+    else if (Hangman.answer.includes(Hangman.userGuess)){
+      findLettersSpot(Hangman.answer);
+      alerts.textContent = '';
+    }
+    else {
+      updateLettersGuessed();
+    }
     answer.textContent = Hangman.board.join(' ');
   }
 }
-
-
-
-
-
-
-
-/*
-var wordlist = ['Apple',
-'Adzuki',
-'Bakeable custard',
-'Baked potato',
-'Banana',
-'Beni imo',
-'Blueberry cheesecake',
-'Brown sugar syrup',
-'Cafe au lait',
-'Cantaloupe',
-'Cappuccino',
-'Caramel macchiato McFlurry',
-'Cherry',
-'Chestnut',
-'Chocobanana',
-'Cinnamon cookie',
-'Citrus golden blend',
-'Corn',
-'Creme brulee',
-'Double cookie',
-'Edamame',
-'European cheese',
-'Exotic Tokyo',
-'Fruit parfait',
-'Ginger ale',
-'Golden citrus',
-'Green bean',
-'Hojicha',
-'Hokkaido cheese and chocolate',
-'Hokkaido Melon with Mascarpone Cheese',
-'Hokkaido roasted corn',
-'Hot Japanese chili',
-'Kinako',
-'Kobe pudding',
-'Koucha',
-'Kuchidoke Kakao',
-'Lemon cheesecake',
-'Maple',
-'Matcha',
-'Miso soup',
-'Muscat of Alexandria',
-'Okinawa sweet potato',
-'Passion fruit',
-'Pear',
-'Ramune',
-'Raspberry passionfruit',
-'Red potato',
-'Rilakkuma hotcake',
-'Rock salt',
-'Royal Milk Tea',
-'Sake',
-'Sakura',
-'Sakura matcha latte',
-'Salt and caramel',
-'Shikuwasa',
-'Shinshu apple',
-'Soy flour',
-'Soy sauce',
-'Strawberry',
-'Strawberry cheesecake',
-'Sweet pudding',
-'Triple berry swirl',
-'Vegetable juice',
-'Wasabi',
-'Watermelon',
-'Yokohama cheesecake',
-'Yubari melon',
-'Yuzu']
-*/
