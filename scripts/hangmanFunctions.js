@@ -56,3 +56,16 @@ function updateWrongLettersGuessed(){
   letters_guessed.textContent = Hangman.wrongLettersGuessed.join(' ');
   lowerUserGuessCount();
 }
+
+function reset(){
+  Hangman.guessesLeft = 6;
+  Hangman.lettersGuessed = [];
+  Hangman.wrongLettersGuessed = [];
+  var randomWord = getRandomWord(wordlist);
+  Hangman.fullAnswer = randomWord;
+  Hangman.answer = stringToArray(randomWord.toLowerCase());
+  arrayToBlanks(Hangman.answer);
+  guesses_left.textContent = Hangman.guessesLeft;
+  letters_guessed.textContent = Hangman.wrongLettersGuessed;
+  answer.textContent = Hangman.board.join(' ');
+}

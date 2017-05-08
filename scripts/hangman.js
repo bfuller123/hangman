@@ -12,7 +12,7 @@ var Hangman = {
 };
 
 document.onkeyup = function(event) {
-  if (event.key === 'Enter') {
+   /* if (event.key === 'Enter') {
     Hangman.guessesLeft = 6;
     Hangman.lettersGuessed = [];
     Hangman.wrongLettersGuessed = [];
@@ -24,7 +24,7 @@ document.onkeyup = function(event) {
     letters_guessed.textContent = Hangman.wrongLettersGuessed;
     answer.textContent = Hangman.board.join(' ');
   }
-  else if (guessableLetters.includes(event.key)) {
+  else */  if (guessableLetters.includes(event.key)) {
     Hangman.userGuess = event.key;
     if (Hangman.lettersGuessed.includes(Hangman.userGuess)) {
       alerts.textContent = 'You have already guessed ' + Hangman.userGuess;
@@ -40,3 +40,5 @@ document.onkeyup = function(event) {
     answer.textContent = Hangman.board.join(' ');
   }
 }
+
+reset();
