@@ -90,4 +90,8 @@ var wordlist = ['Apple',
 'bitter chocolate',
 'jasmine tea',
 'frozen dark chocolate',
-'white and yellow peach']
+'white and yellow peach'];
+
+
+var guessableLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
+'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];

@@ -1,4 +1,3 @@
-//need to have letters guessed and wrong letters guessed
 //create start button
 //create restart button
 
@@ -24,7 +23,7 @@ document.onkeyup = function(event) {
     guesses_left.textContent = Hangman.guessesLeft;
     answer.textContent = Hangman.board.join(' ');
   }
-  else {
+  else if (guessableLetters.includes(event.key)) {
     Hangman.userGuess = event.key;
     if (Hangman.lettersGuessed.includes(Hangman.userGuess)) {
       alerts.textContent = 'You have already guessed ' + Hangman.userGuess;
