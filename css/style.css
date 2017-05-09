@@ -1,3 +1,15 @@
+body {
+  background-color: #FFFAFA;
+}
+
+.jumbotron {
+  margin-top: 11.5%;
+  background-color: #264577;
+  color: white;
+  border-top: 15px solid #ffe542;
+  border-bottom: 15px solid #ffe542;
+}
+
 .button-group {
   margin-top: 3.5%;
 }
