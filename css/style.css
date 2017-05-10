@@ -2,7 +2,7 @@ body {
   background-color: #FFFAFA;
 }
 
-.jumbotron {
+#indexJumbo {
   margin-top: 11.5%;
   background-color: #264577;
   color: white;
@@ -12,4 +12,44 @@ body {
 
 .button-group {
   margin-top: 3.5%;
+}
+
+.game_title {
+	color: white;
+	padding: 1.5% 5%;
+	font-size:1000%;
+	letter-spacing: 15px;
+	margin-top: 0;
+	font-family: 'Passion One', Arial, Sans-Serif;
+}
+
+#kitkat {
+	background-color: #D64541;
+}
+
+.text_vertical {
+	transform: rotate(90deg);
+	transform-origin: left top 0;
+	margin: 2.5% -5.5% 0 5%;
+	padding: 0;
+}
+
+#superheroes_vert {
+	background-color:#446CB3;
+	padding: 30% 20%;
+	color: white;
+	font-family: 'Passion One', Arial, Sans-Serif;
+	letter-spacing: 2px;
+	font-size: 145%;
+	margin-left: -20%;
+}
+
+#endangered_vert {
+	background-color:#EB9532;
+	padding: 28% 22.5%;
+	color: white;
+	font-family: 'Passion One', Arial, Sans-Serif;
+	letter-spacing: 2px;
+	font-size: 145%;
+	margin-left: -20%;
 }
