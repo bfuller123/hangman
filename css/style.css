@@ -1,0 +1,125 @@
+body {
+  background-color: #FFFAFA;
+}
+
+#indexJumbo {
+  margin-top: 6.5%;
+  background-color: #264577;
+  color: white;
+  border-top: 15px solid #ffe542;
+  border-bottom: 15px solid #ffe542;
+}
+
+.title {
+  font-family: 'Passion One', Arial, Sans-Serif;
+  font-size: 400%;
+}
+
+.main {
+  font-size: 900% !important;
+}
+
+.button-group {
+  margin-top: 3.5%;
+}
+
+.game_title {
+	color: white;
+	padding: 1.5% 5%;
+	font-size:1000%;
+  width: 70%;
+	letter-spacing: 15px;
+	margin-top: 0;
+	font-family: 'Passion One', Arial, Sans-Serif;
+}
+
+#kitkat {
+	background-color: #D64541;
+}
+
+#superhero {
+	background-color: #446CB3;
+  font-size: 750%;
+  padding: 3.15% 5%;
+}
+
+#endangered {
+	background-color: #EB9532;
+  font-size: 733%;
+  padding: 3.25% 5%;
+}
+
+.text_vertical {
+  transform: rotate(90deg);
+  transform-origin: left top 0;
+  margin: 1.5% -5.5% 0 5%;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+#kitkat_vert {
+	background-color:#D64541;
+	padding: 30% 20%;
+	color: white;
+	font-family: 'Passion One', Arial, Sans-Serif;
+	letter-spacing: 9.75px;
+	font-size: 145%;
+	margin-left: -20%;
+}
+
+#kitkat_vert:hover {
+  background-color: #96281B;
+}
+
+#superhero_vert {
+	background-color:#446CB3;
+	padding: 30% 20%;
+	color: white;
+	font-family: 'Passion One', Arial, Sans-Serif;
+	letter-spacing: 2px;
+	font-size: 145%;
+	margin-left: -20%;
+}
+
+#superhero_vert:hover {
+  background-color: #1F3A93;
+}
+
+#endangered_vert {
+	background-color:#EB9532;
+	padding: 28% 22.5%;
+	color: white;
+	font-family: 'Passion One', Arial, Sans-Serif;
+	letter-spacing: 2.4px;
+	font-size: 145%;
+	margin-left: -20%;
+}
+
+#endangered_vert:hover {
+  background-color: #E87E04;
+}
+
+.game_body {
+  margin-top: 3%;
+  font-size: 18px;
+}
+
+#alerts {
+  color: #D64541;
+  margin-top: 2%;
+  margin-bottom: -7%;
+}
+
+.reset {
+  margin-top: 5%;
+}
+
+.navbar-default{
+  background-color: #fff;
+  border-top: 5px solid #446CB3;
+  width: 20%;
+  margin-left: 40%;
+  color: #6c7a89;
+}
