@@ -67,5 +67,6 @@ function reset(){
   arrayToBlanks(Hangman.answer);
   guesses_left.textContent = Hangman.guessesLeft;
   letters_guessed.textContent = Hangman.wrongLettersGuessed;
-  answer.textContent = Hangman.board.join(' ');
+  game_board.textContent = Hangman.board.join(' ');
+  alerts.textContent = " ";
 }
